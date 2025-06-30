@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manchados</title>
+  <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+
+  <header>
+    <img src="media/Adobe Express - file.png" alt="Logo tienda" />
+    <nav>
+      <a href="indexI.html">Inicio</a>
+      <a href="index2.html">Gato</a>
+      <a href="index.html">Perro</a>
+      <a href="index3.html">Exótico</a>
+      <a href="index4.html">Ofertas</a>
+      <a href="index5.html">Todo</a>
+      <a href="#">Sobre nosotros</a>
+    </nav>
+  </header>
+  
+  <section class="hero">
+    <img src="media/perro-banner.png" alt="Perro feliz" />
+    <div class="hero-texto">
+      <h1>Lo mejor para tu mejor amigo</h1>
+      <p>Explora juguetes, alimentos, casas y más para tu perro.</p>
+    </div>
+  </section>
+
+  <div class="filtro-toggle-container">
+    <button class="filtro-toggle" onclick="toggleFiltros()">Filtros</button>
+  </div>
+  
+
+  
+
+  <div class="contenedor">
+    <!-- Filtros -->
+    <aside class="sidebar" id="filtroSidebar">
+      <h2>Filtrar</h2>
+      <input type="text" id="busqueda" placeholder="Buscar..." oninput="aplicarFiltros()" />
+      <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 15px;">
+        <input type="checkbox" id="filtroOferta" onchange="aplicarFiltros()" />
+        Solo ofertas
+      </label>
+      <button class="filtro-btn active" onclick="filtrarPorCategoria(this, 'todos')">Todos</button>
+      <button class="filtro-btn" onclick="filtrarPorCategoria(this, 'juguete')">Juguetes</button>
+      <button class="filtro-btn" onclick="filtrarPorCategoria(this, 'comida')">Comida</button>
+      <button class="filtro-btn" onclick="filtrarPorCategoria(this, 'aseo')">Aseo</button>
+      <button class="filtro-btn" onclick="filtrarPorCategoria(this, 'casa')">Casas</button>
+    </aside>
+
+    <!-- Catálogo -->
+    <section class="catalogo" id="catalogo">
+      <div class="producto" data-nombre="Pelota mordedora" data-categoria="juguete">
+        <img src="media/PELOTA-MORDEDORA-DE-GOMA-SOLIDA-celeste-1.jpg" alt="Pelota">
+        <h3>Pelota Mordedora</h3>
+        <p class="precio">$5.990</p>
+        <button class="btn">Agregar al carrito</button>
+      </div>
+
+      <div class="producto" data-nombre="Cuerda resistente" data-categoria="juguete" data-oferta="true">
+        <span class="etiqueta-oferta">OFERTA</span>
+        <img src="media/pawise_cuerda_l_1.jpg" alt="Cuerda">
+        <h3>Cuerda Resistente</h3>
+        <p class="precio">$4.990</p>
+        <button class="btn">Agregar al carrito</button>
+      </div>
+
+      <div class="producto" data-nombre="Shampoo canino" data-categoria="aseo">
+        <img src="media/sinpul-shampoo8738.jpg" alt="Shampoo">
+        <h3>Shampoo Canino</h3>
+        <p class="precio">$4.500</p>
+        <button class="btn">Agregar al carrito</button>
+      </div>
+
+      <div class="producto" data-nombre="Comida premium perro" data-categoria="comida" data-oferta="true">
+        <span class="etiqueta-oferta">OFERTA</span>
+        <img src="media/images.jpg" alt="Alimento">
+        <h3>Comida Premium</h3>
+        <p class="precio">$10.990</p>
+        <button class="btn">Agregar al carrito</button>
+      </div>
+
+      <div class="producto" data-nombre="Casa exterior" data-categoria="casa">
+        <img src="media/w=800,h=800,fit=pad.webp" alt="Casa">
+        <h3>Casa para Perro</h3>
+        <p class="precio">$22.000</p>
+        <button class="btn">Agregar al carrito</button>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2025 Manchados. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    let categoriaActiva = "todos";
+
+    function toggleFiltros() {
+      const sidebar = document.getElementById('filtroSidebar');
+      sidebar.classList.toggle('visible');
+    }
+
+    function aplicarFiltros() {
+      const texto = document.getElementById('busqueda').value.toLowerCase();
+      const soloOfertas = document.getElementById('filtroOferta').checked;
+      const productos = document.querySelectorAll('.producto');
+
+      productos.forEach(prod => {
+        const nombre = prod.getAttribute('data-nombre').toLowerCase();
+        const categoria = prod.getAttribute('data-categoria');
+        const esOferta = prod.getAttribute('data-oferta') === "true";
+
+        const coincideTexto = nombre.includes(texto);
+        const coincideCategoria = categoriaActiva === "todos" || categoria === categoriaActiva;
+        const coincideOferta = !soloOfertas || esOferta;
+
+        prod.style.display = (coincideTexto && coincideCategoria && coincideOferta) ? 'flex' : 'none';
+      });
+    }
+
+    function filtrarPorCategoria(btn, categoria) {
+      categoriaActiva = categoria;
+      document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      aplicarFiltros();
+    }
+  </script>
+
+</body>
+</html>

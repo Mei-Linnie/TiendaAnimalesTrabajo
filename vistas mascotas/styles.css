@@ -1,0 +1,484 @@
+@import "tailwindcss";
+
+*{
+    box-sizing: border-box;
+}
+
+h1{ font-size: 3.5em;}
+h2{ font-size: 4.0em; color: #236494;}
+p { font-size: 1.5em; color: #5d626d}
+h3{ font-size: 0.8em; color: #5d626d; text-align: end}
+h4{ font-size: 1.2em; color: #5d626d}
+
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #EBEFF4;
+}
+
+button{
+    background-color: #6FC3E0;
+    font-size: 2.2em;
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 7px;
+    border: #6FC3E0;
+    margin: 5px;
+}
+
+button:hover{
+    background-color: #0087b5;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+}
+
+header{
+    background-color: #6FC3E0;
+}
+
+header .logo{
+    margin: 15px;
+    padding: 23px 30px;
+    color: #236494;
+    font-size: 1.7em;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+header nav{
+    text-align: center;
+}
+
+header a{
+    padding: 25px 13px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1.6em;
+}
+
+header a:hover{
+    color: #236494;
+}
+
+#baner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    color: #ffffff;
+    height: 50vh;
+    background-image: url("media/Baner\ Gato.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#BotonesCuenta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    margin: 30px;
+}
+
+#Envios .container{
+    text-align: center;
+    padding: 200px 12px;
+    color: #32353b;
+}
+.contenedorMapaFoto {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;               
+  padding: 20px;
+  flex-wrap: wrap;  
+  margin-left: 150px;       
+}
+
+.contenedorMapa {
+  flex: 2;                 
+  min-width: 300px;
+}
+
+.contenedorFoto img {
+  flex: 1;
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-right: 150px;
+}
+
+
+#DatosTienda .container{
+    text-align: center;
+}
+
+#DatosTienda {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+    background-color: #6FC3E0;
+    color: #32353b;
+}
+
+
+#Categorias {
+    padding: 20px 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.BotonPerro a{
+    display: inline-block;
+    width: 250px;
+    height: 230px;  
+    background-image: url('Media/Boton\ perro.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 38px;
+    padding: 10px 10px;
+    text-align: left;
+    line-height: 80px; 
+    margin: 10px;
+
+}
+
+.BotonPerro a:hover {
+  color: #0000ff;
+  cursor: pointer;
+}
+
+.BotonGato a{
+    display: inline-block;
+    width: 250px;
+    height: 230px;   
+    background-image: url('Media/Boton\ gato.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 38px;
+    padding: 10px 10px;
+    text-align: left;
+    line-height: 80px;
+
+}
+
+.BotonGato a:hover {
+  color: #0000ff;
+  cursor: pointer;
+} 
+
+.BotonExotico a{
+    display: inline-block;
+    width: 250px;
+    height: 230px;   
+    background-image: url('Media/Boton\ exotico.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 38px;
+    padding: 10px 10px;
+    text-align: left;
+    line-height: 80px;
+
+}
+
+.BotonExotico a:hover {
+  color: #0000ff;
+  cursor: pointer;
+}
+
+.BotonTiendas a{
+    display: inline-block;
+    width: 250px;
+    height: 230px;   
+    background-image: url('Media/Boton\ tiendas.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 38px;
+    padding: 10px 10px;
+    text-align: left;
+    line-height: 80px;
+
+}
+
+.BotonTiendas a:hover {
+  color: #0000ff;
+  cursor: pointer;
+}
+
+.BotonDescuentos a{
+    display: inline-block;
+    width: 250px;
+    height: 230px;   
+    background-image: url('Media/Boton\ descuentos.webp');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 38px;
+    padding: 10px 10px;
+    text-align: left;
+    line-height: 80px;
+
+}
+
+.BotonDescuentos a:hover {
+  color: #0000ff;
+  cursor: pointer;
+}
+
+.BotonTodo a{
+    display: inline-block;
+    width: 250px;
+    height: 230px;   
+    background-image: url('Media/Boton\ todos.avif');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 38px;
+    padding: 10px 10px;
+    text-align: left;
+    line-height: 80px;
+
+}
+
+.BotonTodo a:hover {
+  color: #0000ff;
+  cursor: pointer;
+}
+
+.contenedorBotones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+} 
+
+
+@media (min-width: 720px){
+
+    button{
+        background-color: #6FC3E0;
+        font-size: 2.5em;
+        color: #ffffff;
+        padding: 12px 30px;
+        border-radius: 7px;
+        border: #6FC3E0;
+        margin: 30px;
+        margin-top: 40px;
+    }
+    header .logo{
+    margin: 40px;
+    padding: 23px 30px;
+    color: #236494;
+    font-size: 1.7em;
+    font-weight: bold;
+    }
+    header nav{
+        text-align: center;
+    }
+    header a{
+    padding: 10px 43px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 2.0em;
+    }
+    #baner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    color: #ffffff;
+    height: 70vh;
+    background-image: url("media/Baner\ Gato.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    }
+    .BotonPerro a{
+    display: inline-block;
+    width: 380px;
+    height: 360px;  
+    background-image: url('Media/Boton\ perro.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 58px;
+    padding: 10px 10px;
+    text-align: left;
+    line-height: 80px; 
+    margin: 10px;
+
+}
+    .BotonPerro a:hover {
+    color: #0000ff;
+    cursor: pointer;
+    }
+
+    .BotonGato a{
+        display: inline-block;
+        width: 380px;
+        height: 360px;   
+        background-image: url('Media/Boton\ gato.jpg');
+        background-size: cover;
+        background-position: center;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 58px;
+        padding: 10px 10px;
+        text-align: left;
+        line-height: 80px;
+
+    }
+
+    .BotonGato a:hover {
+    color: #0000ff;
+    cursor: pointer;
+    } 
+
+    .BotonExotico a{
+        display: inline-block;
+        width: 380px;
+        height: 360px;   
+        background-image: url('Media/Boton\ exotico.jpg');
+        background-size: cover;
+        background-position: center;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 58px;
+        padding: 10px 10px;
+        text-align: left;
+        line-height: 80px;
+
+    }
+
+    .BotonExotico a:hover {
+    color: #0000ff;
+    cursor: pointer;
+    }
+
+    .BotonTiendas a{
+        display: inline-block;
+        width: 380px;
+        height: 360px;   
+        background-image: url('Media/Boton\ tiendas.jpg');
+        background-size: cover;
+        background-position: center;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 58px;
+        padding: 10px 10px;
+        text-align: left;
+        line-height: 80px;
+
+    }
+
+    .BotonTiendas a:hover {
+    color: #0000ff;
+    cursor: pointer;
+    }
+
+    .BotonDescuentos a{
+        display: inline-block;
+        width: 380px;
+        height: 360px;   
+        background-image: url('Media/Boton\ descuentos.webp');
+        background-size: cover;
+        background-position: center;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 58px;
+        padding: 10px 10px;
+        text-align: left;
+        line-height: 80px;
+
+    }
+
+    .BotonDescuentos a:hover {
+    color: #0000ff;
+    cursor: pointer;
+    }
+
+    .BotonTodo a{
+        display: inline-block;
+        width: 380px;
+        height: 360px;   
+        background-image: url('Media/Boton\ todos.avif');
+        background-size: cover;
+        background-position: center;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 58px;
+        padding: 10px 10px;
+        text-align: left;
+        line-height: 80px;
+
+    }
+
+    .BotonTodo a:hover {
+    color: #0000ff;
+    cursor: pointer;
+    }
+
+    .contenedorBotones {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+    } 
+}

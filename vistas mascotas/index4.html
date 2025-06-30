@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manchados - Ofertas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <img src="https://via.placeholder.com/150x50?text=Logo" alt="Logo tienda" />
+    <nav>
+      <a href="indexI.html">Inicio</a>
+      <a href="index2.html">Gato</a>
+      <a href="index.html">Perro</a>
+      <a href="index3.html">Exótico</a>
+      <a href="index4.html">Ofertas</a>
+      <a href="index5.html">Todo</a>
+      <a href="#">Sobre nosotros</a>
+    </nav>
+  </header>
+
+  <h1 class="titulo">Ofertas Especiales</h1>
+
+  <section class="hero">
+    <img src="media/ofertas-banner.png" alt="Productos en oferta" />
+    <div class="hero-texto">
+      <h1>¡No te pierdas nuestras ofertas!</h1>
+      <p>Aprovecha los mejores precios en productos para todo tipo de mascota.</p>
+    </div>
+  </section>
+
+  <div class="filtro-toggle-container">
+    <button class="filtro-toggle" onclick="toggleFiltros()">Filtros</button>
+  </div>
+
+  <div class="contenedor">
+    <!-- Filtros -->
+    <aside class="sidebar" id="filtroSidebar">
+      <h2>Filtrar</h2>
+      <input type="text" id="busqueda" placeholder="Buscar..." oninput="aplicarFiltros()" />
+      <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 15px;">
+        <input type="checkbox" id="filtroOferta" onchange="aplicarFiltros()" />
+        Solo ofertas
+      </label>
+      <button class="filtro-btn active" onclick="filtrarPorCategoria(this, 'todos')">Todos</button>
+      <button class="filtro-btn" onclick="filtrarPorCategoria(this, 'juguete')">Juguetes</button>
+      <button class="filtro-btn" onclick="filtrarPorCategoria(this, 'comida')">Comida</button>
+      <button class="filtro-btn" onclick="filtrarPorCategoria(this, 'aseo')">Aseo</button>
+      <button class="filtro-btn" onclick="filtrarPorCategoria(this, 'casa')">Casas</button>
+    </aside>
+
+
+  
+    <section class="catalogo" id="catalogo">
+
+      <!-- Productos con data-oferta="true" de perros, gatos y exóticos -->
+
+      <div class="producto" data-nombre="Cuerda resistente" data-categoria="juguete" data-oferta="true">
+        <span class="etiqueta-oferta">OFERTA</span>
+        <img src="https://via.placeholder.com/300x160?text=Cuerda" alt="Cuerda">
+        <h3>Cuerda Resistente (Perro)</h3>
+        <p class="precio">$4.990</p>
+        <button class="btn">Agregar al carrito</button>
+      </div>
+
+      <div class="producto" data-nombre="Rascador de piso" data-categoria="juguete" data-oferta="true">
+        <span class="etiqueta-oferta">OFERTA</span>
+        <img src="https://via.placeholder.com/300x160?text=Rascador" alt="Rascador">
+        <h3>Rascador de Piso</h3>
+        <p class="precio">$8.990</p>
+        <button class="btn">Agregar al carrito</button>
+      </div>
+
+      <div class="producto" data-nombre="Comida premium gato" data-categoria="comida" data-oferta="true">
+        <span class="etiqueta-oferta">OFERTA</span>
+        <img src="https://via.placeholder.com/300x160?text=Comida+Gato" alt="Alimento">
+        <h3>Comida Premium (Gato)</h3>
+        <p class="precio">$9.990</p>
+        <button class="btn">Agregar al carrito</button>
+      </div>
+
+      <div class="producto" data-nombre="Comida premium perro" data-categoria="comida" data-oferta="true">
+        <span class="etiqueta-oferta">OFERTA</span>
+        <img src="https://via.placeholder.com/300x160?text=Comida+Perro" alt="Alimento">
+        <h3>Comida Premium (Perro)</h3>
+        <p class="precio">$10.990</p>
+        <button class="btn">Agregar al carrito</button>
+      </div>
+
+      <div class="producto" data-nombre="Sustrato para reptiles" data-categoria="aseo" data-oferta="true">
+        <span class="etiqueta-oferta">OFERTA</span>
+        <img src="https://via.placeholder.com/300x160?text=Sustrato" alt="Sustrato">
+        <h3>Sustrato para Reptiles (Exótico)</h3>
+        <p class="precio">$6.990</p>
+        <button class="btn">Agregar al carrito</button>
+      </div>
+
+      <div class="producto" data-nombre="Terrario pequeño" data-categoria="casa" data-oferta="true">
+        <span class="etiqueta-oferta">OFERTA</span>
+        <img src="https://via.placeholder.com/300x160?text=Terrario" alt="Terrario">
+        <h3>Terrario Pequeño (Exótico)</h3>
+        <p class="precio">$19.990</p>
+        <button class="btn">Agregar al carrito</button>
+      </div>
+      <!-- Aquí puedes añadir productos en oferta para gatos si los defines -->
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2025 Manchados. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    let categoriaActiva = "todos";
+
+    function toggleFiltros() {
+      const sidebar = document.getElementById('filtroSidebar');
+      sidebar.classList.toggle('visible');
+    }
+
+    function aplicarFiltros() {
+      const texto = document.getElementById('busqueda').value.toLowerCase();
+      const soloOfertas = document.getElementById('filtroOferta').checked;
+      const productos = document.querySelectorAll('.producto');
+
+      productos.forEach(prod => {
+        const nombre = prod.getAttribute('data-nombre').toLowerCase();
+        const categoria = prod.getAttribute('data-categoria');
+        const esOferta = prod.getAttribute('data-oferta') === "true";
+
+        const coincideTexto = nombre.includes(texto);
+        const coincideCategoria = categoriaActiva === "todos" || categoria === categoriaActiva;
+        const coincideOferta = !soloOfertas || esOferta;
+
+        prod.style.display = (coincideTexto && coincideCategoria && coincideOferta) ? 'flex' : 'none';
+      });
+    }
+
+    function filtrarPorCategoria(btn, categoria) {
+      categoriaActiva = categoria;
+      document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      aplicarFiltros();
+    }
+  </script>
+
+</body>
+</html>
