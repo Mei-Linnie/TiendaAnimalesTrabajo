@@ -482,3 +482,8 @@ header a:hover{
         margin: 10px;
     } 
 }
+
+.columnas {
+  column-count: 2;
+  column-gap: 20px; /* Espacio entre columnas */
+}
